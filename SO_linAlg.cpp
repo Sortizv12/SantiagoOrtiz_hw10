@@ -19,6 +19,11 @@ int main()
 	cin >> x2;
 	cout<< "Ingrese el numero de columnas de matriz 2"<< endl;
 	cin >> y2;
+	if(y1!=x2)
+	{
+		cout<< "No se puede hacer la multiplicacion matricial"<< endl;
+		return 0;	
+	}
 	//Esto es una matriz
 	//get_Matrix(x1,y1,1);
 	//get_Matrix(x2,y2,2);
@@ -33,6 +38,7 @@ double** matrix_product(double** M1, double** M2, int x1, int y1, int x2, int y2
 	{
 		Mres[i]= new double[y2];	
 	}
+	//Se hace el calculo
 	for(int i=0;i<x1;i++)
 	{
 		for(int j=0;j<y2;j++)
@@ -44,7 +50,7 @@ double** matrix_product(double** M1, double** M2, int x1, int y1, int x2, int y2
 			}
 		}
 	}
-
+	//Se imprime la matriz resultado
 	cout<< "el resultado es:"<< endl;
 	for(int i=0;i<x1;i++)
 	{
@@ -63,6 +69,8 @@ double** matrix_product(double** M1, double** M2, int x1, int y1, int x2, int y2
 
 double** get_Matrix(int M, int N, int num)
 {
+	//Se crea la matriz que se va llenar con los valores recibidos
+
 	double **mat = new double*[M];
 	for(int i=0;i<M;i++)
 	{
@@ -78,6 +86,7 @@ double** get_Matrix(int M, int N, int num)
 		}	
 	
 	}
+	//Se imprime la matriz recibida
 	cout << "La matriz que ingreso es la siguiente:"<< endl;
 	for(int i=0;i<M;i++)
 	{
